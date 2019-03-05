@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+
+<body>
+
+<p th:utext="#{home.welcome}">Welcome to our grocery store!</p>
+
+<h2 th:text ="${today.getMonth()}"> Feb 2019</h2>
+<!--<p th:utext="#{home.welcome(${session.user.name})}">
+    Welcome to our grocery store, Sebastian Pepper!
+</p>-->
+
+<!--<p th:utext="#{${welcomeMsgKey}(${session.user.name})}">
+    Welcome to our grocery store, Sebastian Pepper!
+</p>-->
+Established locale Country: <span th:text="${#locale.country}">Canada</span>.
+<p>Today is: <span th:text="${today}">13 February 2011</span></p>
+<p>Today is: <span th:text="${#temporals.format(today, 'dd MM yyyy')}">13 May 2011</span></p>
+
+</body>
+
+</html>
